@@ -8,6 +8,7 @@ function(
                          pathway.name,
                            out.suffix="pathview",
                          kegg.dir=".",
+                         output.dir = ".",
 
                           multi.state=TRUE,
                           match.data=TRUE,
@@ -82,7 +83,15 @@ if(multi.state) {
 
 for(np in 1:nplots){
 #plot setup
- img.file =paste(pathway.name,pn.suffix[np],"png", sep=".")
+  if (output.dir == ".") {
+    img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
+  } else {
+    if (dir.exists(output.dir))
+      img.file = paste0(output.dir, paste(pathway.name,pn.suffix[np],"png", sep="."))
+    else 
+      warning("Specified output directory ", output.folder, " does not exists. Saved images in working directory.")
+  }
+
  out.msg=sprintf(out.fmt, img.file)
  message("Info: ", out.msg)
   png(img.file, width = width, height = height, res=res)

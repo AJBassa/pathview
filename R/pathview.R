@@ -6,6 +6,7 @@ function(
                          pathway.id,
                          species = "hsa",
                          kegg.dir=".",
+                         output.dir = ".",
                    cpd.idtype="kegg",
                    gene.idtype="entrez",
                    gene.annotpkg=NULL,
@@ -252,7 +253,7 @@ function(
           } else plot.data.cpd=cols.ts.cpd=NULL
 
   if(kegg.native){
- pv.pars= keggview.native(plot.data.gene=plot.data.gene, cols.ts.gene=cols.ts.gene, plot.data.cpd=plot.data.cpd, cols.ts.cpd=cols.ts.cpd, node.data=node.data, pathway.name=pathway.name[i], kegg.dir=kegg.dir, limit=limit, bins=bins, both.dirs=both.dirs,discrete=discrete, low=low, mid=mid, high=high, na.col=na.col, ...)
+ pv.pars= keggview.native(plot.data.gene=plot.data.gene, cols.ts.gene=cols.ts.gene, plot.data.cpd=plot.data.cpd, cols.ts.cpd=cols.ts.cpd, node.data=node.data, pathway.name=pathway.name[i], kegg.dir=kegg.dir, output.dir = output.dir, limit=limit, bins=bins, both.dirs=both.dirs,discrete=discrete, low=low, mid=mid, high=high, na.col=na.col, ...)
 } else{
   pv.pars= keggview.graph(plot.data.gene=plot.data.gene, cols.ts.gene=cols.ts.gene, plot.data.cpd=plot.data.cpd, cols.ts.cpd=cols.ts.cpd, node.data=node.data, path.graph=gR1, pathway.name=pathway.name[i],  map.cpdname=map.cpdname, split.group=split.group, limit=limit, bins=bins, both.dirs=both.dirs, discrete=discrete, low=low, mid=mid, high=high, na.col=na.col, ...)
 }
