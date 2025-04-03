@@ -83,16 +83,11 @@ if(multi.state) {
 
 for(np in 1:nplots){
 #plot setup
-  if (output.dir == ".") {
-    img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
-  } else {
-    if (dir.exists(output.dir)) {
-      img.file = paste0(output.dir, "/", paste(pathway.name,pn.suffix[np],"png", sep="."))
-    } else {
-      warning("Specified output directory ", output.folder, " does not exist. Saved images in working directory.")
-      img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
-    }
-  }
+  if (!dir.exists(output.dir)) {
+    warning("Specified output directory ", output.dir, " does not exist. Saved images in working directory.")
+    output.dir = "."
+  } 
+  img.file <- file.path(output.dir, paste(pathway.name, pn.suffix[np], "png", sep = "."))
 
  out.msg=sprintf(out.fmt, img.file)
  message("Info: ", out.msg)

@@ -276,9 +276,13 @@ if(multi.state) {
   if(sum(cpd.idx)>0) ell.col.plot=ell.col
 }
   
-for(np in 1:nplots){
-  gfile=paste(pathway.name, pn.suffix[np],"pdf", sep=".")
-#  gfile=paste(pathway.name, pn.suffix[1],"pdf", sep=".")
+for(np in 1:nplots) {
+  if (!dir.exists(output.dir)) {
+    warning("Specified output directory ", output.dir, " does not exist. Saved images in working directory.")
+    output.dir = "."
+  } 
+  gfile <- file.path(output.dir, paste(pathway.name, pn.suffix[np], "pdf", sep = "."))
+
   out.msg=sprintf(out.fmt, gfile)
   message("Info: ", out.msg)
 
