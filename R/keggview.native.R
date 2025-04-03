@@ -84,6 +84,7 @@ if(multi.state) {
 for(np in 1:nplots){
 #plot setup
   if (output.dir == ".") {
+    message("Info AJB 1:", output.dir)
     img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
   } else {
     if (dir.exists(output.dir))
@@ -92,6 +93,8 @@ for(np in 1:nplots){
       warning("Specified output directory ", output.folder, " does not exists. Saved images in working directory.")
       img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
   }
+
+  message("Info AJB 2:", output.img.file)
 
  out.msg=sprintf(out.fmt, img.file)
  message("Info: ", out.msg)
