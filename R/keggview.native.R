@@ -87,6 +87,7 @@ for(np in 1:nplots){
     message("Info AJB 1:", output.dir)
     img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
   } else {
+    message("Info AJB 2:", output.dir)
     if (dir.exists(output.dir))
       img.file = paste0(output.dir, paste(pathway.name,pn.suffix[np],"png", sep="."))
     else 
@@ -94,7 +95,7 @@ for(np in 1:nplots){
       img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
   }
 
-  message("Info AJB 2:", output.img.file)
+  message("Info AJB 3:", img.file)
 
  out.msg=sprintf(out.fmt, img.file)
  message("Info: ", out.msg)
