@@ -1,6 +1,6 @@
 render.kegg.node <-
 function(plot.data, cols.ts, img, same.layer=TRUE, type=c("gene","compound")[1], text.col="black", cex=0.25){
-  assign("tmpajb", plot.data, , envir = .GlobalEnv)
+  data(plot.data)
 
   width=ncol(img)
   height=nrow(img)
