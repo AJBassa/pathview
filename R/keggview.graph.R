@@ -8,6 +8,7 @@ keggview.graph <-function(
                            pathway.name,
                            out.suffix="pathview",
                            pdf.size=c(7,7),
+                           output.dir = ".",
 
                           multi.state=TRUE,
                           same.layer=TRUE,
