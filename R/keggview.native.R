@@ -90,6 +90,7 @@ for(np in 1:nplots){
       img.file = paste0(output.dir, paste(pathway.name,pn.suffix[np],"png", sep="."))
     else 
       warning("Specified output directory ", output.folder, " does not exists. Saved images in working directory.")
+      img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
   }
 
  out.msg=sprintf(out.fmt, img.file)
