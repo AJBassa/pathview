@@ -21,7 +21,7 @@ interface to downloader, parser, mapper and viewer functions.
 }
 \usage{
 pathview(gene.data = NULL, cpd.data = NULL, pathway.id,
-species = "hsa", kegg.dir = ".", cpd.idtype = "kegg", gene.idtype =
+species = "hsa", kegg.dir = ".", output.dir = ".", cpd.idtype = "kegg", gene.idtype =
 "entrez", gene.annotpkg = NULL, min.nnodes = 3, kegg.native = TRUE,
 map.null = TRUE, expand.node = FALSE, split.group = FALSE, map.symbol =
 TRUE, map.cpdname = TRUE, node.sum = "sum", discrete=list(gene=FALSE,
@@ -93,6 +93,9 @@ character, the directory of KEGG pathway data file (.xml) and image file
 naming convention of KEGG's (species code + pathway id,
 e.g. hsa04110.xml, hsa04110.png etc) in this directory. Default
 kegg.dir="." (current working directory). 
+}
+  \item{output.dir}{
+character, the directory for the output (.png or .pdf). Default output.dir = "." (current working directory)
 }
   \item{cpd.idtype}{
 character, ID type used for the cpd.data. Default cpd.idtype="kegg" (include
