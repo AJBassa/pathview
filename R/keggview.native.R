@@ -88,11 +88,12 @@ for(np in 1:nplots){
     img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
   } else {
     message("Info AJB 2:", output.dir)
-    if (dir.exists(output.dir))
+    if (dir.exists(output.dir)) {
       img.file = paste0(output.dir, paste(pathway.name,pn.suffix[np],"png", sep="."))
-    else 
+    } else {
       warning("Specified output directory ", output.folder, " does not exists. Saved images in working directory.")
       img.file = paste(pathway.name,pn.suffix[np],"png", sep=".")
+    }
   }
 
   message("Info AJB 3:", img.file)
