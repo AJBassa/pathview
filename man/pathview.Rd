@@ -135,7 +135,7 @@ logical, whether the multiple-gene nodes are expanded into single-gene
 nodes. Each expanded single-gene nodes inherits all edges from the
 original multiple-gene node. This option only affects graphviz graph view, i.e. when
 kegg.native=FALSE. This option is not effective for most metabolic
-pathways where it conflits with  converting reactions to edges. Default expand.node=FLASE.
+pathways where it conflits with  converting reactions to edges. Default expand.node=FALSE.
 }
   \item{split.group}{
 logical, whether split node groups are split to individual nodes. Each
@@ -145,7 +145,7 @@ kegg.native=FALSE. This option also effects most metabolic
 pathways even without group nodes defined orginally. For these pathways,
 genes involved in the same reaction are grouped automatically when
 converting reactions to edges unless split.group=TRUE. d
-split.group=FLASE.
+split.group=FALSE.
 }
   \item{map.symbol}{
 logical, whether map gene IDs to symbols for gene node labels or use the
@@ -168,7 +168,7 @@ kept. Default map.cpdname=TRUE.
   \item{discrete}{
 a list of two logical elements with "gene" and "cpd" as the names. This
 argument tells whether gene.data or cpd.data should be treated as
-discrete. Default dsicrete=list(gene=FALSE, cpd=FALSE), i.e. both data should
+discrete. Default discrete=list(gene=FALSE, cpd=FALSE), i.e. both data should
 be treated as continuous.
 }
   \item{limit}{
@@ -219,7 +219,7 @@ special arguments for keggview.native or keggview.graph function.
 data.frame returned by node.map function for rendering mapped gene
   nodes, including node name, type, positions (x, y), sizes (width,
   height), and mapped gene.data. This data is also used as input for
-  pseduo-color coding through node.color function. Default plot.data.gene=NULL.
+  pseudo-color coding through node.color function. Default plot.data.gene=NULL.
 }
   \item{plot.data.cpd}{
 same as plot.data.gene function, except for mapped compound node data. d
@@ -260,7 +260,7 @@ character, the suffix to be added after the pathway name as part of the
   paired. Default match.data=TRUE. When let sample sizes of gene.data
   and cpd.data be m and n, when m>n, extra columns of NA's (mapped to no
   color) will be added to cpd.data as to make the sample size the
-  same. This will result in the smae number of slice in gene nodes and
+  same. This will result in the same number of slice in gene nodes and
   compound when multi.state=TRUE.
 }
   \item{same.layer}{
@@ -295,14 +295,14 @@ character, controlling how the color keys are aligned when both
   by x coordinates, and "y", aligned by y coordinates. Default key.align="x".
 }
   \item{key.pos}{
-character, controlling the position of color key(s). Potentail values
+character, controlling the position of color key(s). Potential values
   are "bottomleft", "bottomright", "topleft" and "topright". d
   key.pos="topright". 
 }
   \item{sign.pos}{
 character, controlling the position of pathview signature. Only
   effective when kegg.native=FALSE, Signature position is fixed in place
-  of the original KEGG signature when kegg.native=TRUE. Potentail values
+  of the original KEGG signature when kegg.native=TRUE. Potential values
   are "bottomleft", "bottomright", "topleft" and "topright". d
   sign.pos="bottomright". 
 }
@@ -331,7 +331,7 @@ kegg.native=FALSE. Default is.signal=TRUE.
   \item{afactor}{
 numeric, node amplifying factor. This argument is for node size
 fine-tuning, its effect is subtler than expected. Only effective when
-kegg.native=FALSE. Default afctor=1.
+kegg.native=FALSE. Default afactor=1.
 }
   \item{text.width}{
 numeric, specifying the line width for text wrap. Only effective when
