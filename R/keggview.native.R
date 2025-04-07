@@ -130,7 +130,7 @@ if(!is.null(cols.ts.cpd) & nc.cpd>=np){
   align="n"
 
 if (multi.state & length(multi.labels) > 0)
-  text(x = 0, y = height, labels = paste(multi.labels, collapse = "|"), offset = 150, cex = 0.25)
+  text(x = 150, y = height - 150, labels = paste(multi.labels, collapse = "|"), pos = 1, cex = 0.25)
 
 # na.col=colorpanel2(1, low=na.col, high=na.col)
  ucol.gene=unique(as.vector(cols.ts.gene))
