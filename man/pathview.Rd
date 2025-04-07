@@ -144,7 +144,7 @@ option only affects graphviz graph view, i.e. when
 kegg.native=FALSE. This option also effects most metabolic
 pathways even without group nodes defined orginally. For these pathways,
 genes involved in the same reaction are grouped automatically when
-converting reactions to edges unless split.group=TRUE. d
+converting reactions to edges unless split.group=TRUE. Default
 split.group=FALSE.
 }
   \item{map.symbol}{
@@ -182,18 +182,18 @@ directional data. Default limit=list(gene=1, cpd=1).
   \item{bins}{
 a list of two integer elements with "gene" and "cpd" as the names. This
 argument specifies the number of levels or bins for gene.data and cpd.data when converting
-them to pseudo colors. Default limit=list(gene=10, cpd=10).
+them to pseudo colors. Default bins=list(gene=10, cpd=10).
 }
   \item{both.dirs}{
 a list of two logical  elements with "gene" and "cpd" as the names. This
 argument specifies whether gene.data and cpd.data are 1 directional or 2
-directional data when converting them to pseudo colors. Default limit=list(gene=TRUE, cpd=TRUE).
+directional data when converting them to pseudo colors. Default both.dirs=list(gene=TRUE, cpd=TRUE).
 }
   \item{trans.fun}{
 a list of two function (not character) elements with "gene" and "cpd" as the names. This
 argument specifies whether and how gene.data and cpd.data are
 transformed. Examples are \code{log}, \code{abs} or users' own
-functions. Default limit=list(gene=NULL, cpd=NULL).
+functions. Default trans.fun=list(gene=NULL, cpd=NULL).
 }
   \item{low, mid, high}{
 each is a list of two colors with "gene" and "cpd" as the names. This
@@ -207,7 +207,7 @@ The values for 'low, mid, high' can be given as color names
 ("\#FF0000"=red).
 }
   \item{na.col}{
-color used for NA's or missing values in gene.data and cpd.data. d
+color used for NA's or missing values in gene.data and cpd.data. Default
 na.col="transparent". 
 }
   \item{\dots}{
@@ -296,14 +296,14 @@ character, controlling how the color keys are aligned when both
 }
   \item{key.pos}{
 character, controlling the position of color key(s). Potential values
-  are "bottomleft", "bottomright", "topleft" and "topright". d
+  are "bottomleft", "bottomright", "topleft" and "topright". Default
   key.pos="topright". 
 }
   \item{sign.pos}{
 character, controlling the position of pathview signature. Only
   effective when kegg.native=FALSE, Signature position is fixed in place
   of the original KEGG signature when kegg.native=TRUE. Potential values
-  are "bottomleft", "bottomright", "topleft" and "topright". d
+  are "bottomleft", "bottomright", "topleft" and "topright". Default
   sign.pos="bottomright". 
 }
 
