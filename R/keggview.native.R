@@ -11,7 +11,7 @@ function(
                          output.dir = ".",
 
                           multi.state=TRUE,
-                          multi.labels=FALSE,
+                          multi.labels="",
                           match.data=TRUE,
                            same.layer=TRUE, #
                          res=300, #
@@ -129,8 +129,8 @@ if(!is.null(cols.ts.cpd) & nc.cpd>=np){
   off.sets=c(x=0,y=0)
   align="n"
 
-if (multi.labels == TRUE)
-  text(x = 150, y = 100, labels = paste(colnames(plot.data.gene), collapse = "|"), cex = 0.5)
+if (multi.state & length(multi.labels) > 0)
+  text(x = 17, y = height, labels = paste(multi.labels, collapse = "|"), pos = 4, cex = 0.15)
 
 # na.col=colorpanel2(1, low=na.col, high=na.col)
  ucol.gene=unique(as.vector(cols.ts.gene))
