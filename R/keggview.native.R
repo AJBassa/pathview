@@ -11,6 +11,7 @@ function(
                          output.dir = ".",
 
                           multi.state=TRUE,
+                          multi.labels=FALSE,
                           match.data=TRUE,
                            same.layer=TRUE, #
                          res=300, #
@@ -127,6 +128,9 @@ if(!is.null(cols.ts.cpd) & nc.cpd>=np){
   pv.pars$sign.cex=cex
   off.sets=c(x=0,y=0)
   align="n"
+
+if (multi.labels == TRUE)
+  text(x = colnames(x = 0, y = 0, labels = plot.data.gene))
 
 # na.col=colorpanel2(1, low=na.col, high=na.col)
  ucol.gene=unique(as.vector(cols.ts.gene))
