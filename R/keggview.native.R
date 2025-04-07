@@ -130,7 +130,7 @@ if(!is.null(cols.ts.cpd) & nc.cpd>=np){
   align="n"
 
 if (multi.labels == TRUE)
-  text(x = colnames(x = 0, y = 0, labels = plot.data.gene))
+  text(x = 0, y = 0, labels = colnames(plot.data.gene))
 
 # na.col=colorpanel2(1, low=na.col, high=na.col)
  ucol.gene=unique(as.vector(cols.ts.gene))
